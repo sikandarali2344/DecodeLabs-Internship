@@ -1,0 +1,178 @@
+{
+  "cid_20260606_165707_6b12ab": {
+    "title": "who are you",
+    "hash": "35a88889273e93da2e9477dd1cfe9380fcd0c56f5281d9af45462ba23d9c31fc",
+    "timestamp": "2026-06-06 16:57:07",
+    "chat": [
+      {
+        "role": "user",
+        "content": "who are you"
+      },
+      {
+        "role": "ai",
+        "content": "🤖 I'm Nexa AI — your intelligent assistant built with LangChain and DeepSeek."
+      }
+    ]
+  },
+  "cid_20260606_165720_04c12f": {
+    "title": "who are you",
+    "hash": "184637caec568eea05f237e91081886ea0ebf63aac5c7e04a2f6b6bc58e0b445",
+    "timestamp": "2026-06-06 16:57:20",
+    "chat": [
+      {
+        "role": "user",
+        "content": "who are you"
+      },
+      {
+        "role": "ai",
+        "content": "🤖 I'm Nexa AI — your intelligent assistant built with LangChain and DeepSeek."
+      },
+      {
+        "role": "user",
+        "content": "who developed you"
+      },
+      {
+        "role": "ai",
+        "content": "🔧 I'm the result of Dhruv Patel’s vision and coding magic."
+      }
+    ]
+  },
+  "cid_20260606_191146_7b9290": {
+    "title": "hello",
+    "hash": "002da2b2aeed0a8875e2b5e576472a81634924d8d058e074c30ec192291c648a",
+    "timestamp": "2026-06-06 19:11:46",
+    "chat": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "ai",
+        "content": "👋 Hello! I'm DecodeBot AI. How can I help you today?"
+      }
+    ]
+  },
+  "cid_20260606_191202_feff9f": {
+    "title": "hello",
+    "hash": "b8bc53b53a2230fdc673a558525a8f4ff5645858caa2907d4d1cdbfbdc39f1d4",
+    "timestamp": "2026-06-06 19:12:02",
+    "chat": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "ai",
+        "content": "👋 Hello! I'm DecodeBot AI. How can I help you today?"
+      },
+      {
+        "role": "user",
+        "content": "who developed you"
+      },
+      {
+        "role": "ai",
+        "content": "🔧 Sikandar 2026 developed me as part of his AI/ML Internship project. He's passionate about artificial intelligence and building smart applications!"
+      }
+    ]
+  },
+  "cid_20260607_071737_61f3db": {
+    "title": "who are you",
+    "hash": "3497c68961a2c8395f6fe944dc333a0ce61c96e69cc894397ea7e8467ffe2671",
+    "timestamp": "2026-06-07 07:17:37",
+    "chat": [
+      {
+        "role": "user",
+        "content": "who are you"
+      },
+      {
+        "role": "ai",
+        "content": "🤖 I'm DecodeBot AI - your intelligent assistant created by Sikandar 2026. I'm here to help you with coding, questions, and conversations!"
+      }
+    ]
+  },
+  "cid_20260607_071827_e7d1e8": {
+    "title": "who are you",
+    "hash": "40a335323a86843e5c346f10a45ebed5924ee3235c2b1e84d9bb03b410fecfbf",
+    "timestamp": "2026-06-07 07:18:27",
+    "chat": [
+      {
+        "role": "user",
+        "content": "who are you"
+      },
+      {
+        "role": "ai",
+        "content": "🤖 I'm DecodeBot AI - your intelligent assistant created by Sikandar 2026. I'm here to help you with coding, questions, and conversations!"
+      },
+      {
+        "role": "user",
+        "content": "who develped you"
+      },
+      {
+        "role": "user",
+        "content": "who developed you"
+      },
+      {
+        "role": "ai",
+        "content": "🔧 Sikandar developed me as part of his AI/ML Internship project. He's passionate about artificial intelligence and building smart applications!"
+      }
+    ]
+  },
+  "cid_20260607_071843_d58e6c": {
+    "title": "who are you",
+    "hash": "134d0eabb6f43d10ee22ae707f2dee55c5d5795956e8519e55438236d89a84e3",
+    "timestamp": "2026-06-07 07:18:43",
+    "chat": [
+      {
+        "role": "user",
+        "content": "who are you"
+      },
+      {
+        "role": "ai",
+        "content": "🤖 I'm DecodeBot AI - your intelligent assistant created by Sikandar 2026. I'm here to help you with coding, questions, and conversations!"
+      },
+      {
+        "role": "user",
+        "content": "who develped you"
+      },
+      {
+        "role": "user",
+        "content": "who developed you"
+      },
+      {
+        "role": "ai",
+        "content": "🔧 Sikandar developed me as part of his AI/ML Internship project. He's passionate about artificial intelligence and building smart applications!"
+      },
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "ai",
+        "content": "👋 Hello! I'm DecodeBot AI. How can I help you today?"
+      }
+    ]
+  },
+  "cid_20260608_072628_d51b62": {
+    "title": "hello",
+    "hash": "514dc5a75b1b03d3c5ed931cbecd72a660ce4e6b7539099624c2b31003331d54",
+    "timestamp": "2026-06-08 07:26:28",
+    "chat": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "ai",
+        "content": "👋 Hello! I'm DecodeBot AI. How can I help you today?"
+      },
+      {
+        "role": "user",
+        "content": "who developed you"
+      },
+      {
+        "role": "ai",
+        "content": "🔧 Sikandar developed me as part of his AI/ML Internship project. He's passionate about artificial intelligence and building smart applications!"
+      }
+    ]
+  }
+}
