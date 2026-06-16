@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DecodeLabs AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span { color: #fff; -webkit-text-fill-color: #fff; }
+        .nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .nav a:hover { color: #fff; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 30px 60px; }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 25px;
+        }
+        .card h2 { font-size: 26px; margin-bottom: 12px; }
+        .card p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 16px; }
+        .badge-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .badge-item {
+            background: rgba(255,255,255,0.06);
+            padding: 12px 20px;
+            border-radius: 12px;
+            flex: 1;
+            min-width: 130px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .badge-item .number {
+            font-size: 30px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .badge-item .label { font-size: 13px; color: rgba(255,255,255,0.5); }
+        .back-link {
+            display: inline-block;
+            color: #4facfe;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+        }
+        .btn-try {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-try:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(245,87,108,0.4); }
+
+        @media (max-width: 768px) {
+            .header { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            .nav a { margin: 0 10px; font-size: 14px; }
+            .container { padding: 20px 15px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">🎬 Decode<span>Labs</span></div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/#preferences">Recommend</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+
+        <div class="card">
+            <h2>🚀 About This Project</h2>
+            <p>
+                <strong>Project 3: AI Recommendation Logic</strong> is part of the 
+                DecodeLabs Industrial Training Kit for <strong>Batch 2026</strong>.
+            </p>
+            <p style="margin-top:12px;">
+                Built using pure similarity logic, this engine matches user preferences 
+                with movie attributes to provide personalized recommendations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 How It Works</h2>
+            <p>
+                <strong>1.</strong> User Input: Select genres, director, year range, rating, and tags<br>
+                <strong>2.</strong> Similarity Calculation: Weighted scoring system matches preferences<br>
+                <strong>3.</strong> Recommendations: Top 6 movies with match percentages displayed
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📊 Project Stats</h2>
+            <div class="badge-container">
+                <div class="badge-item">
+                    <div class="number">{{ movie_count if movie_count else 15 }}</div>
+                    <div class="label">Movies</div>
+                </div>
+                <div class="badge-item">
+                    <div class="number">{{ genre_count if genre_count else 11 }}</div>
+                    <div class="label">Genres</div>
+                </div>
+                <div class="badge-item">
+                    <div class="number">{{ tag_count if tag_count else 61 }}</div>
+                    <div class="label">Tags</div>
+                </div>
+                <div class="badge-item">
+                    <div class="number">6</div>
+                    <div class="label">Criteria</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Created By</h2>
+            <p>
+                <strong>Sikandar</strong> • AI Engineer Intern<br>
+                Batch 2026 • DecodeLabs
+            </p>
+            <p style="margin-top:8px; font-size:14px;">
+                📧 sikandarai1@quest.edu.pk
+            </p>
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a href="/#preferences" class="btn-try">🚀 Try It Now</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Made with ❤️ by <strong>Sikandar</strong> 2026 | DecodeLabs</p>
+    </footer>
+
+</body>
+</html>

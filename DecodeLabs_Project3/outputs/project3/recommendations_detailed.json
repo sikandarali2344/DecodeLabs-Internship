@@ -1,0 +1,197 @@
+{
+  "timestamp": "2026-06-16T12:56:54.969478",
+  "user_preferences": {
+    "tags": [
+      "C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/app.py"
+    ],
+    "cast": [
+      "C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/project3_main.py"
+    ],
+    "algorithm": "hybrid"
+  },
+  "analysis": {
+    "total_recommendations": 5,
+    "average_similarity": 0.0,
+    "max_similarity": 0.0,
+    "min_similarity": 0.0,
+    "genre_distribution": {
+      "Action": 5,
+      "Crime": 1,
+      "Drama": 1,
+      "Sci-Fi": 4,
+      "Thriller": 1,
+      "Adventure": 2
+    },
+    "director_distribution": {
+      "Christopher Nolan": 2,
+      "Joss Whedon": 1,
+      "George Miller": 1,
+      "Lana Wachowski, Lilly Wachowski": 1
+    },
+    "year_range": {
+      "min": 1999,
+      "max": 2015
+    }
+  },
+  "recommendations": [
+    {
+      "movie": {
+        "id": 1,
+        "title": "The Dark Knight",
+        "year": 2008,
+        "director": "Christopher Nolan",
+        "genre": [
+          "Action",
+          "Crime",
+          "Drama"
+        ],
+        "rating": 4.9,
+        "votes": 2345678,
+        "duration": 152,
+        "language": "English",
+        "country": "USA",
+        "tags": [
+          "superhero",
+          "dark",
+          "psychological",
+          "joker",
+          "batman"
+        ],
+        "cast": [
+          "Christian Bale",
+          "Heath Ledger",
+          "Aaron Eckhart"
+        ],
+        "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham..."
+      },
+      "similarity": 0.0
+    },
+    {
+      "movie": {
+        "id": 2,
+        "title": "Inception",
+        "year": 2010,
+        "director": "Christopher Nolan",
+        "genre": [
+          "Action",
+          "Sci-Fi",
+          "Thriller"
+        ],
+        "rating": 4.7,
+        "votes": 1987654,
+        "duration": 148,
+        "language": "English",
+        "country": "USA",
+        "tags": [
+          "mind-bending",
+          "dreams",
+          "heist",
+          "philosophical",
+          "time"
+        ],
+        "cast": [
+          "Leonardo DiCaprio",
+          "Joseph Gordon-Levitt",
+          "Elliot Page"
+        ],
+        "plot": "A thief who steals corporate secrets through the use of dream-sharing technology..."
+      },
+      "similarity": 0.0
+    },
+    {
+      "movie": {
+        "id": 3,
+        "title": "The Avengers",
+        "year": 2012,
+        "director": "Joss Whedon",
+        "genre": [
+          "Action",
+          "Adventure",
+          "Sci-Fi"
+        ],
+        "rating": 4.5,
+        "votes": 1567890,
+        "duration": 143,
+        "language": "English",
+        "country": "USA",
+        "tags": [
+          "marvel",
+          "superhero",
+          "ensemble",
+          "comic",
+          "action-packed"
+        ],
+        "cast": [
+          "Robert Downey Jr.",
+          "Chris Evans",
+          "Scarlett Johansson"
+        ],
+        "plot": "Earth's mightiest heroes must come together and learn to fight as a team..."
+      },
+      "similarity": 0.0
+    },
+    {
+      "movie": {
+        "id": 4,
+        "title": "Mad Max: Fury Road",
+        "year": 2015,
+        "director": "George Miller",
+        "genre": [
+          "Action",
+          "Adventure",
+          "Sci-Fi"
+        ],
+        "rating": 4.7,
+        "votes": 1123456,
+        "duration": 120,
+        "language": "English",
+        "country": "Australia",
+        "tags": [
+          "post-apocalyptic",
+          "car-chase",
+          "dystopian",
+          "feminist",
+          "epic"
+        ],
+        "cast": [
+          "Tom Hardy",
+          "Charlize Theron",
+          "Nicholas Hoult"
+        ],
+        "plot": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler..."
+      },
+      "similarity": 0.0
+    },
+    {
+      "movie": {
+        "id": 5,
+        "title": "The Matrix",
+        "year": 1999,
+        "director": "Lana Wachowski, Lilly Wachowski",
+        "genre": [
+          "Action",
+          "Sci-Fi"
+        ],
+        "rating": 4.8,
+        "votes": 1987654,
+        "duration": 136,
+        "language": "English",
+        "country": "USA",
+        "tags": [
+          "philosophical",
+          "cyberpunk",
+          "classic",
+          "mind-bending",
+          "futuristic"
+        ],
+        "cast": [
+          "Keanu Reeves",
+          "Laurence Fishburne",
+          "Carrie-Anne Moss"
+        ],
+        "plot": "A computer programmer discovers that reality is a simulation..."
+      },
+      "similarity": 0.0
+    }
+  ]
+}

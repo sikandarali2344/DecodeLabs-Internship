@@ -1,0 +1,54 @@
+================================================================================
+AI RECOMMENDATION ENGINE - RESULTS
+Generated: 2026-06-16 12:56:54
+================================================================================
+
+USER PREFERENCES:
+  • tags: ['C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/app.py']
+  • cast: ['C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/project3_main.py']
+  • algorithm: hybrid
+
+================================================================================
+TOP RECOMMENDATIONS:
+================================================================================
+
+1. The Dark Knight (2008)
+   Match: 0.0%
+   Director: Christopher Nolan
+   Genre: Action, Crime, Drama
+   Rating: 4.9/5.0
+   Tags: superhero, dark, psychological, joker, batman
+   Plot: When the menace known as the Joker wreaks havoc and chaos on the people of Gotham......
+
+2. Inception (2010)
+   Match: 0.0%
+   Director: Christopher Nolan
+   Genre: Action, Sci-Fi, Thriller
+   Rating: 4.7/5.0
+   Tags: mind-bending, dreams, heist, philosophical, time
+   Plot: A thief who steals corporate secrets through the use of dream-sharing technology......
+
+3. The Avengers (2012)
+   Match: 0.0%
+   Director: Joss Whedon
+   Genre: Action, Adventure, Sci-Fi
+   Rating: 4.5/5.0
+   Tags: marvel, superhero, ensemble, comic, action-packed
+   Plot: Earth's mightiest heroes must come together and learn to fight as a team......
+
+4. Mad Max: Fury Road (2015)
+   Match: 0.0%
+   Director: George Miller
+   Genre: Action, Adventure, Sci-Fi
+   Rating: 4.7/5.0
+   Tags: post-apocalyptic, car-chase, dystopian, feminist, epic
+   Plot: In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler......
+
+5. The Matrix (1999)
+   Match: 0.0%
+   Director: Lana Wachowski, Lilly Wachowski
+   Genre: Action, Sci-Fi
+   Rating: 4.8/5.0
+   Tags: philosophical, cyberpunk, classic, mind-bending, futuristic
+   Plot: A computer programmer discovers that reality is a simulation......
+

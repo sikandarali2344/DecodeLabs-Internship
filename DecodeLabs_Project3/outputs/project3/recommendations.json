@@ -1,0 +1,138 @@
+{
+  "timestamp": "2026-06-16T12:56:54.964226",
+  "user_preferences": {
+    "tags": [
+      "C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/app.py"
+    ],
+    "cast": [
+      "C:\\Users\\easyf\\AppData\\Local\\Programs\\Python\\Python313\\python.exe c:/Users/easyf/Desktop/DecodeLabs_Project3/project3_main.py"
+    ],
+    "algorithm": "hybrid"
+  },
+  "recommendations": [
+    {
+      "title": "The Dark Knight",
+      "year": 2008,
+      "director": "Christopher Nolan",
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 4.9,
+      "tags": [
+        "superhero",
+        "dark",
+        "psychological",
+        "joker",
+        "batman"
+      ],
+      "similarity_score": 0.0,
+      "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham...",
+      "cast": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart"
+      ]
+    },
+    {
+      "title": "Inception",
+      "year": 2010,
+      "director": "Christopher Nolan",
+      "genre": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "rating": 4.7,
+      "tags": [
+        "mind-bending",
+        "dreams",
+        "heist",
+        "philosophical",
+        "time"
+      ],
+      "similarity_score": 0.0,
+      "plot": "A thief who steals corporate secrets through the use of dream-sharing technology...",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Elliot Page"
+      ]
+    },
+    {
+      "title": "The Avengers",
+      "year": 2012,
+      "director": "Joss Whedon",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "rating": 4.5,
+      "tags": [
+        "marvel",
+        "superhero",
+        "ensemble",
+        "comic",
+        "action-packed"
+      ],
+      "similarity_score": 0.0,
+      "plot": "Earth's mightiest heroes must come together and learn to fight as a team...",
+      "cast": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Scarlett Johansson"
+      ]
+    },
+    {
+      "title": "Mad Max: Fury Road",
+      "year": 2015,
+      "director": "George Miller",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "rating": 4.7,
+      "tags": [
+        "post-apocalyptic",
+        "car-chase",
+        "dystopian",
+        "feminist",
+        "epic"
+      ],
+      "similarity_score": 0.0,
+      "plot": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler...",
+      "cast": [
+        "Tom Hardy",
+        "Charlize Theron",
+        "Nicholas Hoult"
+      ]
+    },
+    {
+      "title": "The Matrix",
+      "year": 1999,
+      "director": "Lana Wachowski, Lilly Wachowski",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "rating": 4.8,
+      "tags": [
+        "philosophical",
+        "cyberpunk",
+        "classic",
+        "mind-bending",
+        "futuristic"
+      ],
+      "similarity_score": 0.0,
+      "plot": "A computer programmer discovers that reality is a simulation...",
+      "cast": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss"
+      ]
+    }
+  ]
+}
