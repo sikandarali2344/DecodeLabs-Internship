@@ -1,0 +1,13 @@
+======================================================================
+OCR EXTRACTION RESULTS
+Processed: 2026-06-21 12:59:24
+======================================================================
+
+DecodeLabs Al
+
+Project 4: Computer Vision
+OCR — Optical Character Recognition
+
+Batch 2026 | Sikandar
+
+Confidence: 95%+ Accuracy

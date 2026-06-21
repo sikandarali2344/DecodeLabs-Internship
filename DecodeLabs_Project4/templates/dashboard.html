@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 - OCR Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span { color: #fff; -webkit-text-fill-color: #fff; }
+        .nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .nav a:hover { color: #fff; }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(180deg, rgba(79,172,254,0.1), transparent);
+        }
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 18px; color: rgba(255,255,255,0.6); }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(79,172,254,0.2);
+            border: 1px solid rgba(79,172,254,0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            color: #4facfe;
+            margin-top: 10px;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px 30px 40px; }
+
+        /* ===== UPLOAD SECTION ===== */
+        .upload-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px dashed rgba(255,255,255,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .upload-section:hover {
+            border-color: rgba(79,172,254,0.4);
+            background: rgba(255,255,255,0.08);
+        }
+        .upload-section .icon { font-size: 60px; margin-bottom: 15px; }
+        .upload-section h2 { font-size: 24px; margin-bottom: 10px; }
+        .upload-section p { color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+        .upload-section input[type="file"] {
+            display: none;
+        }
+        .upload-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245,87,108,0.4);
+        }
+        .upload-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== LOADING ===== */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        .loading .spinner {
+            border: 4px solid rgba(255,255,255,0.1);
+            border-top: 4px solid #f5576c;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== RESULTS ===== */
+        .results {
+            display: none;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: 0.3s;
+        }
+        .stat-card .number {
+            font-size: 30px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card .label { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 5px; }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .image-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        .image-container .placeholder {
+            color: rgba(255,255,255,0.3);
+            font-size: 16px;
+        }
+
+        /* ===== WORD LIST ===== */
+        .word-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .word-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .word-item .text { font-size: 14px; font-weight: 500; }
+        .word-item .conf {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .conf-bar {
+            width: 80px;
+            height: 5px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .conf-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4facfe, #f5576c);
+            transition: width 1s ease;
+        }
+        .conf-value {
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 35px;
+            text-align: right;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .status-dot.high { background: #4ade80; }
+        .status-dot.medium { background: #fbbf24; }
+        .status-dot.low { background: #f87171; }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .text-result {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .word-list::-webkit-scrollbar {
+            width: 6px;
+            background: rgba(255,255,255,0.05);
+        }
+        .word-list::-webkit-scrollbar-thumb {
+            background: rgba(79,172,254,0.3);
+            border-radius: 10px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .main-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .header { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            .nav a { margin: 0 10px; font-size: 14px; }
+            .hero h1 { font-size: 28px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .container { padding: 15px; }
+            .upload-section { padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="logo">👁️ Decode<span>Labs</span></div>
+        <nav class="nav">
+            <a href="/">Dashboard</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <h1>📸 OCR Image Detection</h1>
+        <p>Upload any image to extract text using AI</p>
+        <span class="badge">🚀 Drag & Drop or Click to Upload</span>
+    </section>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+
+        <!-- ===== UPLOAD SECTION ===== -->
+        <div class="upload-section" id="dropZone">
+            <div class="icon">📤</div>
+            <h2>Upload Image for OCR</h2>
+            <p>Supported formats: JPG, PNG, JPEG, BMP</p>
+            <input type="file" id="fileInput" accept="image/*">
+            <button class="upload-btn" id="uploadBtn" onclick="document.getElementById('fileInput').click()">
+                📁 Choose Image
+            </button>
+            <p style="margin-top:15px; font-size:13px; color:rgba(255,255,255,0.3);">
+                or drag and drop your image here
+            </p>
+        </div>
+
+        <!-- ===== LOADING ===== -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <h3>🧠 AI is Reading Your Image...</h3>
+            <p style="color:rgba(255,255,255,0.4);">Extracting text with Tesseract OCR</p>
+        </div>
+
+        <!-- ===== RESULTS ===== -->
+        <div class="results" id="results">
+
+            <!-- Stats -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="number" id="totalWords">0</div>
+                    <div class="label">Total Words</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="highConf">0</div>
+                    <div class="label">High Confidence (≥80%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="accuracy">0%</div>
+                    <div class="label">Accuracy Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="processingTime">0s</div>
+                    <div class="label">Processing Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="wordCount">0</div>
+                    <div class="label">Characters Extracted</div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="main-grid">
+
+                <!-- Image Result -->
+                <div class="card">
+                    <h2>🖼️ OCR Detection Result</h2>
+                    <div class="image-container" id="imageContainer">
+                        <img id="resultImage" src="" alt="OCR Result" style="display:none;">
+                        <span class="placeholder" id="placeholder">No image processed yet</span>
+                    </div>
+                </div>
+
+                <!-- Word List -->
+                <div class="card">
+                    <h2>📊 Words Detected</h2>
+                    <div class="word-list" id="wordList">
+                        <div style="color:rgba(255,255,255,0.3); text-align:center; padding:20px;">
+                            No words detected yet
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extracted Text -->
+            <div class="card full-width" style="margin-top:25px;">
+                <h2>📝 Extracted Text</h2>
+                <div class="text-result" id="extractedText">
+                    No text extracted yet
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>Made with ❤️ by <strong>Sikandar</strong> 2026 | DecodeLabs</p>
+        <p style="margin-top:5px;">Project 4: Computer Vision • Batch 2026</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ============================================
+        // UPLOAD HANDLING
+        // ============================================
+
+        const fileInput = document.getElementById('fileInput');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+        const dropZone = document.getElementById('dropZone');
+
+        // File input change
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                uploadFile(this.files[0]);
+            }
+        });
+
+        // Drag and drop
+        dropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#4facfe';
+            this.style.background = 'rgba(79,172,254,0.1)';
+        });
+
+        dropZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'rgba(255,255,255,0.1)';
+            this.style.background = 'rgba(255,255,255,0.05)';
+        });
+
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'rgba(255,255,255,0.1)';
+            this.style.background = 'rgba(255,255,255,0.05)';
+            
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                uploadFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        // Upload function
+        function uploadFile(file) {
+            // Show loading
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = '⏳ Processing...';
+
+            const formData = new FormData();
+            formData.append('image', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    loading.style.display = 'none';
+                    uploadBtn.disabled = false;
+                    uploadBtn.textContent = '📁 Choose Image';
+                    return;
+                }
+                
+                // Display results
+                displayResults(data);
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = '📁 Choose Another Image';
+                
+                // Scroll to results
+                results.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                alert('Error processing image: ' + error);
+                loading.style.display = 'none';
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = '📁 Choose Image';
+            });
+        }
+
+        // ============================================
+        // DISPLAY RESULTS
+        // ============================================
+
+        function displayResults(data) {
+            // Update stats
+            document.getElementById('totalWords').textContent = data.total_words || 0;
+            document.getElementById('highConf').textContent = data.high_confidence || 0;
+            document.getElementById('accuracy').textContent = (data.accuracy || 0) + '%';
+            document.getElementById('processingTime').textContent = (data.processing_time || 0) + 's';
+            
+            // Count characters
+            const charCount = (data.text || '').length;
+            document.getElementById('wordCount').textContent = charCount;
+
+            // Show image
+            const img = document.getElementById('resultImage');
+            const placeholder = document.getElementById('placeholder');
+            if (data.image_path) {
+                img.src = '/image/ocr_result_upload.png?t=' + new Date().getTime();
+                img.style.display = 'block';
+                placeholder.style.display = 'none';
+            }
+
+            // Show extracted text
+            document.getElementById('extractedText').textContent = data.text || 'No text extracted';
+
+            // Show word list
+            const wordList = document.getElementById('wordList');
+            if (data.words && data.words.length > 0) {
+                wordList.innerHTML = '';
+                data.words.forEach(word => {
+                    const confidence = word.confidence || 0;
+                    let statusClass = 'low';
+                    if (confidence >= 80) statusClass = 'high';
+                    else if (confidence >= 60) statusClass = 'medium';
+                    
+                    const div = document.createElement('div');
+                    div.className = 'word-item';
+                    div.innerHTML = `
+                        <span class="text">
+                            <span class="status-dot ${statusClass}"></span>
+                            ${word.text}
+                        </span>
+                        <span class="conf">
+                            <span class="conf-bar">
+                                <span class="fill" style="width: ${confidence}%;"></span>
+                            </span>
+                            <span class="conf-value">${confidence}%</span>
+                        </span>
+                    `;
+                    wordList.appendChild(div);
+                });
+            } else {
+                wordList.innerHTML = '<div style="color:rgba(255,255,255,0.3); text-align:center; padding:20px;">No words detected</div>';
+            }
+        }
+
+        // ============================================
+        // ANIMATE ON LOAD
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for existing results
+            fetch('/api/result')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.error) {
+                        displayResults(data);
+                        results.style.display = 'block';
+                    }
+                })
+                .catch(() => {});
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Computer Vision Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span { color: #fff; -webkit-text-fill-color: #fff; }
+        .nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .nav a:hover { color: #fff; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 30px 60px; }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 25px;
+        }
+        .card h2 { font-size: 26px; margin-bottom: 15px; }
+        .card p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 16px; }
+        .back-link {
+            display: inline-block;
+            color: #4facfe;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .header { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            .nav a { margin: 0 10px; font-size: 14px; }
+            .container { padding: 20px 15px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">👁️ Decode<span>Labs</span></div>
+        <nav class="nav">
+            <a href="/">Dashboard</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">← Back to Dashboard</a>
+
+        <div class="card">
+            <h2>👁️ Project 4: Computer Vision</h2>
+            <p>
+                <strong>Project 4</strong> is part of the DecodeLabs Industrial Training Kit for <strong>Batch 2026</strong>.
+            </p>
+            <p style="margin-top:10px;">
+                This project demonstrates <strong>Computer Vision</strong> capabilities including:
+            </p>
+            <ul style="color:rgba(255,255,255,0.7); margin-top:10px; padding-left:20px; line-height:2;">
+                <li>📖 Optical Character Recognition (OCR) using Tesseract</li>
+                <li>🎯 Object Detection using MobileNet-SSD</li>
+                <li>⚙️ Image Pre-Processing (Grayscale, Blur, Thresholding)</li>
+                <li>📊 Confidence Scoring & Analysis</li>
+                <li>🖼️ Visual Confirmation & Bounding Boxes</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📊 Results</h2>
+            <p>
+                ✅ <strong>18 words detected</strong> with 94.4% accuracy<br>
+                ✅ <strong>17 words</strong> achieved 80%+ confidence<br>
+                ✅ <strong>Processing time:</strong> 0.70 seconds<br>
+                ✅ All qualification criteria met!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Created By</h2>
+            <p>
+                <strong>Sikandar</strong> • AI Engineer Intern<br>
+                Batch 2026 • DecodeLabs
+            </p>
+            <p style="margin-top:8px; font-size:14px; color:rgba(255,255,255,0.4);">
+                📧 sikandarai1@quest.edu.pk
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Made with ❤️ by <strong>Sikandar</strong> 2026 | DecodeLabs</p>
+    </footer>
+
+</body>
+</html>
